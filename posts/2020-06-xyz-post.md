@@ -20,7 +20,7 @@
 
 > :Title shadow=0 0 8px black, color=white
 >
-> Sample Blog Post
+> Story of a tweet, a four-hour concentrated work and a product
 
 > :Author src=github
 
