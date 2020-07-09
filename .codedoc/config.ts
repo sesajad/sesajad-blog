@@ -36,8 +36,8 @@ export const config = /*#__PURE__*/configuration({
   ],
   misc: {
     github: {
-      repo: 'coding-blog-boilerplate',
-      user: 'CONNECT-platform'
+      repo: 'sesajad.coding.blog',
+      user: 'sesajad'
     }
   }
 });
