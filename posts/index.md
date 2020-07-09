@@ -22,6 +22,4 @@
 
 <br><br>
 
-> :Author src=github
-
 > :ToCPrevNext

@@ -1,4 +1,4 @@
-> :Hero src=/img/2020-07-pyspark-header.svg,
+> :Hero src=/img/2020-07-pyspark-header.png,
 >       target=desktop,
 >       leak=156px
 
