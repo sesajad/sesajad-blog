@@ -1,6 +1,7 @@
 
 import { configuration } from '@codedoc/core';
 import { codingBlog } from '@codedoc/coding-blog-plugin';
+import { formulaPlugin } from '@codedoc/core/components';
 
 import { theme } from './theme';
 
@@ -30,7 +31,8 @@ export const config = /*#__PURE__*/configuration({
         'img',
         'favicon.ico',
       ]
-    })
+    }),
+    formulaPlugin
   ],
   misc: {
     github: {
