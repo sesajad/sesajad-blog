@@ -16,6 +16,11 @@
       "hash": "5wqN0ULYT2NlFDhnYtl+xQ=="
     },
     {
+      "name": "zoomOnFormula",
+      "filename": "/home/runner/work/sesajad.coding.blog/sesajad.coding.blog/.codedoc/node_modules/@codedoc/core/dist/es6/components/formula/zoom-on-formula.js",
+      "hash": "oTfN1C00NZK+DCCnV10U/w=="
+    },
+    {
       "name": "codeSelection",
       "filename": "/home/runner/work/sesajad.coding.blog/sesajad.coding.blog/.codedoc/node_modules/@codedoc/core/dist/es6/components/code/selection.js",
       "hash": "p6oHec93pB8tuPIeO1cDnQ=="
