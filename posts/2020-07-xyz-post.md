@@ -1,4 +1,4 @@
-> :Hero src=https://images.indianexpress.com/2020/05/spotify-bloom-759.jpg,
+> :Hero src=https://miro.medium.com/max/10342/1*m3xkO7nM64KwpmdWhXr_Vw.jpeg,
 >       target=desktop,
 >       leak=156px
 
