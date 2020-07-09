@@ -15,8 +15,8 @@
 
 # Latest Posts
 
-> :ArticleCard src=/2020-07-xyz-post, style=box
-
+> :ArticleCard src=/2020-07-xyz, style=box
+> :ArticleCard src=/2020-07-pyspark, style=box
 
 ---
 
