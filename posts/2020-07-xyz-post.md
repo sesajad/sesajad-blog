@@ -1,0 +1,64 @@
+> :Hero src=https://images.indianexpress.com/2020/05/spotify-bloom-759.jpg,
+>       target=desktop,
+>       leak=156px
+
+
+> :Title shadow=0 0 8px black, color=white
+>
+> Story of a tweet, and a four-hour concentrated work and a product
+
+> :Author src=github
+
+
+The story starts from a tweet, from Arya that *why doesn't Spotify have a feature to tell it "I am going to change my mood in a couple of weeks, so make a schedule and bring me something"?* I guess the answer was the priority, the same thing everywhere when there is a product.
+
+At the moment, I don't remember what I was doing, but I'm sure that I was doing something boring (forcefully), and this tweet made a chance for me to run away and do something fun.
+
+---
+
+The very first idea was that if I had all of the songs on the Spotify and a deep neural network which embeds a song into a conceptual feature space (means it extracts a meaningful vector in a not that much dimension which contains high-level features of a song such as a mood), then the rest of idea is trivial,
+
+- Select two songs that represent your current mood and your desired mood.
+- Thinking of these two songs as two points in a k-dim space, then I can run a query for songs near to the line that connects these two points.
+- That's it. Now just ordering the songs (points) with the projection of the songs (points) on the line, we have an ordered list of songs to help to move from a mood to another.
+
+---
+
+I was started by searching about possible deep neural networks embedding music in a meaningful latent space. (such that cosine similarity works as similarity) I didn't want to implement or do something. I just was curious that If the scientists didn't make such a network yet, so what the hell are they doing? The result was disappointing as I was expecting so. But as I was still walking away in the pages, wondering what APIs Spotify provides for third-party apps, I saw something pretty cool‍, [the audio features](https://developer.spotify.com/documentation/web-api/reference/tracks/get-audio-features/).
+
+```json
+{
+  "duration_ms" : 255349,
+  "key" : 5,
+  "mode" : 0,
+  "time_signature" : 4,
+  "acousticness" : 0.514,
+  "danceability" : 0.735,
+  "energy" : 0.578,
+  "instrumentalness" : 0.0902,
+  "liveness" : 0.159,
+  "loudness" : -11.840,
+  "speechiness" : 0.0461,
+  "valence" : 0.624,
+  "tempo" : 98.002,
+  "id" : "06AKEBrKUckW0KREUWRnvT",
+  "uri" : "spotify:track:06AKEBrKUckW0KREUWRnvT",
+  "track_href" : "https://api.spotify.com/v1/tracks/06AKEBrKUckW0KREUWRnvT",
+  "analysis_url" : "https://api.spotify.com/v1/audio-analysis/06AKEBrKUckW0KREUWRnvT",
+  "type" : "audio_features"
+}
+```
+
+By using the description and the histogram (available in the API doc), we can decide whether a feature is desirable for our case or not. **"energy"** and **"valence"** were used for this purpose.
+
+The only other thing that I need was a search API to query within these features, which was surprisingly available using [recommendations](https://developer.spotify.com/documentation/web-api/reference/browse/get-recommendations/). This API can generate a recommendation list from some seeds and optionally takes a target_feature argument to make the result near to the target.
+
+Then I just set two input songs as the seeds for recommendation and making n queries with target features that are n equidistance points on the line connecting two points in the feature space.
+
+---
+
+Finally, writing the code is the most trivial part of an idea.
+
+The main thing to ask here, is **"so what?"**, at least what I've learned from this experience was that if you don't care about data, maybe someone cares. It means that publishing APIs is not just about publishing what you care for, publish whatever you can, and let the community do crazy things for you.
+
+And here is the link by the way [From X to Y in Z Days with Spotify](https://sesajad.me/sub/xyz/)
